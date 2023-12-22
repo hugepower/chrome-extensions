@@ -25,9 +25,7 @@
       "128": "icons/editor.png"
     }
   },
-  "permissions": [
-    "sidePanel"
-  ],
+  "permissions": ["sidePanel"],
   "background": {
     "service_worker": "background.js"
   }
