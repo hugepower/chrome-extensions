@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <head>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      #textbox {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: calc(100% - 5%);
+        font-family: system-ui, -apple-system;
+      }
+
+      .copy-clear-button {
+        position: absolute;
+        bottom: 0;
+        width: 50%;
+        height: 5%;
+        background-color: #ffffffff;
+        border: none;
+        color: #000000;
+        text-align: center;
+        transition: all 0.5s;
+        cursor: pointer;
+        font-weight: bold;
+        font-family: system-ui, -apple-system;
+      }
+
+      #copy-button {
+        left: 0;
+      }
+
+      #clear-button {
+        right: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="textbox" placeholder=""></textarea>
+    <button id="copy-button" class="copy-clear-button">Copy</button>
+    <button id="clear-button" class="copy-clear-button">Clear</button>
+    <script src="popup.js"></script>
+  </body>
+</html>
