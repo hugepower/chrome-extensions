@@ -19,3 +19,19 @@ copyButton.addEventListener('click', () => {
 clearButton.addEventListener('click', () => {
   textbox.value = '';
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+  let matchMedia = window.matchMedia('(prefers-color-scheme: dark)');
+  if (matchMedia.matches) {
+    document.body.classList.add('dark-mode');
+  } else {
+    document.body.classList.remove('dark-mode');
+  }
+  matchMedia.addEventListener('change', function () {
+    if (matchMedia.matches) {
+      document.body.classList.add('dark-mode');
+    } else {
+      document.body.classList.remove('dark-mode');
+    }
+  });
+});
