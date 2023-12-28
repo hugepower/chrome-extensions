@@ -35,12 +35,3 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 });
-
-setInterval(function () {
-  var now = new Date();
-  var hours = now.getHours();
-  var minutes = now.getMinutes();
-  //var seconds = now.getSeconds();
-  var timeString = hours.toString().padStart(2, '0') + ':' + minutes.toString().padStart(2, '0');
-  document.getElementById('top-textarea').value = timeString;
-}, 1000);
