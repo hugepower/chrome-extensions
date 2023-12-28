@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "我的草稿",
   "description": "一个简洁的文字输入框，摒弃一切繁复的功能。写下的每句话，可随时抹去，一切随心。",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "side_panel": {
     "default_path": "sidepanel.html",
     "openPanelOnActionClick": true
