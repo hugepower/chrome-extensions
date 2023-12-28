@@ -1,7 +1,7 @@
 // 获取HTML元素
-const textbox = document.getElementById('textbox');
-const copyButton = document.getElementById('copy-button');
-const clearButton = document.getElementById('clear-button');
+const textbox = document.getElementById('main-textarea');
+const copyButton = document.getElementById('copyButton');
+const clearButton = document.getElementById('clearButton');
 
 // 当点击“拷贝”按钮时，复制文本区域中的内容到剪贴板
 copyButton.addEventListener('click', () => {

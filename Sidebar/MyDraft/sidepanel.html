@@ -10,16 +10,30 @@
         outline: none; /* 取消轮廓线 */
       }
 
-      #textbox {
+      #top-textarea {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
-        height: calc(100% - 5%);
+        height: calc(2.5%); /* 高度设置为2.5% */
+        border-top-left-radius: 18px; /* 设置左上角圆角 */
+        border-top-right-radius: 18px; /* 设置右上角圆角 */
+        text-align: center;
+        border-bottom: none;
+        resize: none;
+      }
+
+      #main-textarea {
+        position: absolute;
+        border-top: none;
+        top: 2.5%; /* 上一个文本框的高度 */
+        left: 0;
+        width: 100%;
+        height: calc(95% - 2.5%); /* 高度设置为95%减去上一个文本框的高度 */
         font-family: system-ui, -apple-system;
       }
 
-      .copy-clear-button {
+      .copy-clear-buttons {
         position: absolute;
         bottom: 0;
         width: 50%;
@@ -34,30 +48,30 @@
         font-family: system-ui, -apple-system;
       }
 
-      #copy-button {
+      #copyButton {
         left: 0;
       }
 
-      #clear-button {
+      #clearButton {
         right: 0;
       }
 
-      .dark-mode #textbox {
+      .dark-mode textarea {
         background-color: #23272f;
         color: #ffffff;
       }
 
-      .dark-mode .copy-clear-button {
+      .dark-mode .copy-clear-buttons {
         background-color: #23272f;
         color: #ffffff;
       }
-      
     </style>
   </head>
   <body>
-    <textarea id="textbox" placeholder=""></textarea>
-    <button id="copy-button" class="copy-clear-button">Copy</button>
-    <button id="clear-button" class="copy-clear-button">Clear</button>
+    <textarea id="top-textarea" placeholder="" readonly></textarea>
+    <textarea id="main-textarea" placeholder=""></textarea>
+    <button id="copyButton" class="copy-clear-buttons">Copy</button>
+    <button id="clearButton" class="copy-clear-buttons">Clear</button>
     <script src="popup.js"></script>
   </body>
 </html>
