@@ -19,6 +19,9 @@
         border-top-left-radius: 18px; /* 设置左上角圆角 */
         border-top-right-radius: 18px; /* 设置右上角圆角 */
         text-align: center;
+        border-top: none;
+        border-left: none;
+        border-right: none;
         border-bottom: none;
         resize: none;
         color: rgb(205, 8, 8);
@@ -26,13 +29,17 @@
       }
 
       #main-textarea {
+        border-left: none;
+        border-right: none;
         position: absolute;
         border-top: none;
+        border-bottom: none;
         top: 2.5%; /* 上一个文本框的高度 */
         left: 0;
         width: 100%;
         height: calc(95% - 2.5%); /* 高度设置为95%减去上一个文本框的高度 */
         font-family: system-ui, -apple-system;
+        resize: none;
       }
 
       .copy-clear-buttons {
