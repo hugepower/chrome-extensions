@@ -3,8 +3,9 @@ const getElements = () => {
   const topTextbox = document.getElementById('top-textarea');
   const mainTextbox = document.getElementById('main-textarea');
   const copyButton = document.getElementById('copyButton');
+  const formatButton = document.getElementById('formatButton');
   const clearButton = document.getElementById('clearButton');
-  return { topTextbox, mainTextbox, copyButton, clearButton };
+  return { topTextbox, mainTextbox, copyButton, formatButton, clearButton };
 };
 
 // 2. 处理主文本区域的输入
@@ -59,7 +60,19 @@ const toggleDarkMode = () => {
   updateTheme(matchMedia.matches);
 };
 
-// 7. 设置按钮的tabindex
+// 7. 格式化文本内容
+const formatTextboxes = ({ formatButton, mainTextbox }) => {
+  formatButton.addEventListener('click', () => {
+    var text = mainTextbox.value;
+    text = text.replace(/^\s*[\r\n]/gm, '');
+    text = text.replace(/\s*[\r\n]\s*/g, '\n');
+    text = text.replace(/\t/g, '\t\t');
+    text = text.replace(/\n/g, '\n\n');
+    mainTextbox.value = text;
+  });
+};
+
+// 8. 设置按钮的tabindex
 const setButtonsTabindex = () => {
   Array.from(document.querySelectorAll('button')).forEach((button) =>
     button.setAttribute('tabindex', -1)
@@ -72,6 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
   handleMainTextboxInput({ topTextbox, mainTextbox });
   handleTabKeydown({ mainTextbox });
   copyTextToClipboard({ copyButton, mainTextbox });
+  formatTextboxes({ formatButton, mainTextbox });
   clearTextboxes({ clearButton, topTextbox, mainTextbox });
   toggleDarkMode();
   setButtonsTabindex();

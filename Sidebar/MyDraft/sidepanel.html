@@ -46,11 +46,10 @@
       .copy-clear-buttons {
         position: absolute;
         bottom: 0;
-        width: 50%;
+        width: 33.33%;
         height: 5%;
         background-color: #ffffffff;
         border: none;
-        color: #000000;
         text-align: center;
         transition: all 0.5s;
         cursor: pointer;
@@ -66,6 +65,14 @@
         right: 0;
       }
 
+      #formatButton {
+        left: 33.33%;
+      }
+      .container {
+        display: flex;
+        justify-content: space-between;
+      }
+
       .dark-mode textarea {
         background-color: #23272f;
         color: #ffffff;
@@ -78,10 +85,13 @@
     </style>
   </head>
   <body>
-    <textarea id="top-textarea" placeholder="写下的每句话，可随时抹去，一切随心。" readonly></textarea>
-    <textarea id="main-textarea" placeholder=""></textarea>
-    <button id="copyButton" class="copy-clear-buttons">Copy</button>
-    <button id="clearButton" class="copy-clear-buttons">Clear</button>
+    <div class="container">
+      <textarea id="top-textarea" placeholder="" readonly></textarea>
+      <textarea id="main-textarea" placeholder=""></textarea>
+      <button id="copyButton" class="copy-clear-buttons">Copy</button>
+      <button id="formatButton" class="copy-clear-buttons">Format</button>
+      <button id="clearButton" class="copy-clear-buttons">Clear</button>
+    </div>
     <script src="popup.js"></script>
   </body>
 </html>
