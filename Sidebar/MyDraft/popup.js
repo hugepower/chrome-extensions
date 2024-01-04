@@ -61,7 +61,7 @@ const toggleDarkMode = () => {
 };
 
 // 7. 格式化文本内容
-const formatTextboxes = ({ formatButton, mainTextbox }) => {
+const formatTextboxes = ({ formatButton, mainTextbox, topTextbox }) => {
   formatButton.addEventListener('click', () => {
     var text = mainTextbox.value.trim();
     text = text.replace(/^\s*[\r\n]/gm, '');
@@ -69,6 +69,7 @@ const formatTextboxes = ({ formatButton, mainTextbox }) => {
     text = text.replace(/\t/g, '\t\t');
     text = text.replace(/\n/g, '\n\n');
     mainTextbox.value = text;
+    topTextbox.value = mainTextbox.value.length === 0 ? '' : mainTextbox.value.length;
   });
 };
 
@@ -85,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
   handleMainTextboxInput({ topTextbox, mainTextbox });
   handleTabKeydown({ mainTextbox });
   copyTextToClipboard({ copyButton, mainTextbox });
-  formatTextboxes({ formatButton, mainTextbox });
+  formatTextboxes({ formatButton, mainTextbox, topTextbox });
   clearTextboxes({ clearButton, topTextbox, mainTextbox });
   toggleDarkMode();
   setButtonsTabindex();
