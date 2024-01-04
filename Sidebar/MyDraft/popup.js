@@ -63,7 +63,7 @@ const toggleDarkMode = () => {
 // 7. 格式化文本内容
 const formatTextboxes = ({ formatButton, mainTextbox }) => {
   formatButton.addEventListener('click', () => {
-    var text = mainTextbox.value;
+    var text = mainTextbox.value.trim();
     text = text.replace(/^\s*[\r\n]/gm, '');
     text = text.replace(/\s*[\r\n]\s*/g, '\n');
     text = text.replace(/\t/g, '\t\t');
