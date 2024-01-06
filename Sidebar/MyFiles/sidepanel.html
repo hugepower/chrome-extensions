@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>文件列表</title>
+    <style>
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+      }
+      /* 调整复选框样式 */
+      input[type='checkbox'] {
+        transform: scale(1.5); /* 缩小复选框 */
+        margin: 0; /* 去除默认的外边距 */
+      }
+      /* 将复选框垂直居中 */
+      td input[type='checkbox'] {
+        vertical-align: middle;
+      }
+      /* 调整复选框列的宽度 */
+      td:first-child {
+        width: 50px; /* 调整为你想要的宽度百分比 */
+        text-align: center;
+      }
+      .centered th {
+        text-align: center;
+      }
+      body.dark-mode {
+        background-color: #333333;
+        color: #cccccc;
+      }
+
+      /* 设置表格的背景和文字颜色 */
+      body.dark-mode table {
+        background-color: #333333;
+        color: white;
+        border-collapse: collapse; /* 让单元格边框相邻 */
+        width: 100%;
+      }
+
+      /* 设置表格边框的颜色 */
+      body.dark-mode table,
+      body.dark-mode th,
+      body.dark-mode td {
+        border: 1px solid white; /* 将表格边框设置为白色 */
+      }
+
+      /* 设置表头的背景颜色 */
+      body.dark-mode th {
+        background-color: #333333;
+        color: #cccccc;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr class="centered">
+          <th id="Downloaded">已下载</th>
+          <th id="FileName">文件名</th>
+          <th id="FilePath">文件路径</th>
+          <th id="Rating">评分</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody">
+        <!-- 数据将在这里插入 -->
+      </tbody>
+    </table>
+    <script src="popup.js"></script>
+    <script src="sidebar.js"></script>
+  </body>
+</html>
